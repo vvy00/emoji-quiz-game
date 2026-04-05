@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emoji Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Emoji Quiz Game 🎮</h1>
+
+        <div id="categorySelect">
+            <h2>Choose a category:</h2>
+            <button onclick="startCategory('movies')">🎬 Movies & TV</button>
+            <button onclick="startCategory('animals')">🐾 Animals</button>
+            <button onclick="startCategory('food')">😋 Food</button>
+            <button onclick="startCategory('word')">💡 Guess the Word</button>
+        </div>
+
+        <div id="quizContent" style="display:none;">
+            <div class="emoji" id="emoji">🦁👑</div>
+            <div class="choices" id="choices"></div>
+            <div class="score" id="score">Score: 0</div>
+            <div class="message" id="message"></div>
+            <button id="restartBtn" onclick="restartGame()">Restart Game</button>
+        </div>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="quiz.js"></script>
+    <script src="confetti.js"></script>
+</body>
+</html>

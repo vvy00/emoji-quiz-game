@@ -19,3 +19,6 @@ A fun and interactive emoji quiz game where players guess movies, animals, food,
 - HTML
 - CSS (with gradient background, animations, and responsive layout)
 - JavaScript (game logic and confetti effects)
+
+## AI Usage
+- Used ChatGPT for debugging

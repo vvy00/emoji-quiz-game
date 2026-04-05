@@ -1,6 +1,6 @@
 # 🎮 Emoji Quiz Game 🎮
 
-A emoji quiz game where players guess movies, animals, food, or words from emojis. Built with HTML, CSS, and JavaScript.
+A emoji quiz game where players guess movies, animals, food, or words from emojis.
 
 ## Features
 - Multiple categories: Movies & TV, Animals, Food, Guess the Word

@@ -74,6 +74,8 @@ const allQuizzes = {
 let current = 0;
 let score = 0;
 let quiz = [];
+let timeLeft = 20;
+let timerInterval;
 
 function shuffleArray(arr) {
     return arr.sort(() => Math.random() - 0.5);
@@ -93,6 +95,7 @@ function startCategory(category) {
 function showQuestion() {
     const restartBtn = document.getElementById("restartBtn");
     restartBtn.style.display = "none";
+    startTimer();
 
     if (current >= quiz.length) {
         document.getElementById("emoji").textContent = "🎉 Game Over! 🎉";
@@ -126,6 +129,7 @@ function showQuestion() {
 }
 
 function checkAnswer(selected) {
+    clearInterval(timerInterval);
     const correctAnswer = quiz[current].answer;
     if (selected === correctAnswer) {
         score++;
@@ -141,4 +145,27 @@ function checkAnswer(selected) {
 function restartGame() {
     document.getElementById("categorySelect").style.display = "block";
     document.getElementById("quizContent").style.display = "none";
+}
+
+function exitGame() {
+    if (confirm("Exit the quiz?")) {
+        location.reload();
+    }
+}
+
+function startTimer() {
+    clearInterval(timerInterval);
+    timeLeft = 20;
+
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = "Time: " + timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById("message").textContent = "⏰ Time's up!";
+            current++;
+            setTimeout(showQuestion, 1000);
+        }
+    }, 1000);
 }
